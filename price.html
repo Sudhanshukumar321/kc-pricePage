@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        letter-spacing: 0.5px;
+      }
+      a,ins{
+        text-decoration: none;
+      }
+      section {
+        margin-bottom: 4rem;
+      }
+      .table td,
+      .table th {
+        font-size: 0.9rem;
+        font-family: "Nunito", sans-serif;
+        padding: 1rem;
+        border: 1px solid #000;
+      }
+
+      .table th {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      h3 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.5em;
+        margin-bottom: 1rem;
+      }
+      .faqs .comment-list .comment {
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: 1.1rem;
+        padding-left: 10px;
+        color: #777;
+        line-height: 1.7em;
+      }
+      .faqs .comment-list .comment h4 {
+        font-size: 0.9rem;
+        color: #000;
+      }
+      .faqs .sidebar #products {
+        position: sticky;
+        top: 0;
+      }
+      .faqs .sidebar .product.product_faq {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 12px;
+      }
+      .faqs .sidebar .product-description {
+        padding: 10px 0;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+      }
+      .faqs .sidebar .product-description h5 {
+        line-height: 20px;
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #000;
+        margin: 0;
+      }
+      .faqs .sidebar .product-description a,ins{
+        text-decoration: none;
+        color: #000;
+        font-style: normal;
+      }
+      .faqs .sidebar .product-price1 a{
+        font-family: Nunito, sans-serif;
+        font-size: 0.9em;
+      }
+      /* location links*/
+      .headinseo {
+        width: 100%;
+        display: block;
+        color: #000 !important;
+        margin-bottom: 1rem;
+      }
+
+      .headinseo span {
+        font-weight: 800;
+        display: block;
+      }
+
+      .location-link {
+        overflow: hidden;
+        /*list-style-type:none !important;*/
+      }
+
+      .location-link ul {
+        width: 100%;
+        list-style-type: none !important;
+        overflow: hidden;
+        margin-bottom: 0;
+      }
+
+      .location-link ul li {
+        line-height: 30px;
+        left: 0;
+      }
+
+      .location-link ul li a {
+        text-decoration: none;
+        color: #0000ff;
+        font-size: 1rem;
+        -webkit-transition: all 0.4s linear;
+        transition: all 0.4s linear;
+      }
+
+      .location-link ul li a i {
+        margin-right: 8px;
+        color: #0000ff;
+        -webkit-transition: all 0.4s linear;
+        transition: all 0.4s linear;
+      }
+
+      .location-link ul li a:hover {
+        color: #0056b3;
+      }
+
+      .location-link ul li a:hover i {
+        margin-right: 15px;
+        color: #0056b3;
+      }
+      .moretext_1,
+      .moretext_2 {
+        display: none;
+      }
+      .moreless_button_2,
+      .moreless_button_1 {
+        font-weight: 600;
+        padding: 12px 18px;
+        border: 2px solid #0000ff;
+        color:  #0000ff;
+        font-size: 12px;
+        text-transform: uppercase;
+        transition: all 0.4s;
+        margin-left: 2rem;
+      }
+      .moreless_button_2:hover,
+      .moreless_button_1:hover{
+        border: 2px solid transparent;
+        background-color: #0000ff ;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center m-b-15">
+            <h3
+              style="
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+                font-style: normal;
+              "
+            >
+              Trademark vs Copyright vs Patent
+            </h3>
+          </div>
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr style="font-size: 1.2rem">
+                    <th scope="col"></th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Inventore blanditiis sit voluptatum accusamus, placeat
+                      animi?
+                    </td>
+                    <td>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Id corporis a obcaecati autem aliquam nihil!
+                    </td>
+                    <td>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Consequatur ullam, a excepturi odit velit eum.
+                    </td>
+                    <td>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Qui pariatur, provident natus quibusdam doloremque sit.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <td>Mark</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="faqs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div
+              class="tab-pane"
+              id="contact3"
+              role="tabpanel"
+              aria-labelledby="contact-tab"
+            >
+              <div class="comments" id="comments">
+                <div class="comment_number m-b-15">
+                  <h3><span>Trademark Registration</span> FAQ's</h3>
+                </div>
+                <div class="comment-list">
+                  <div id="qan">
+                    <div
+                      class="comment"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What is a trademark?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          A trademark is a distinctive marker that distinguishes
+                          products or services from competitors. It can include
+                          symbols, designs, expressions, or identifiable
+                          features associated with a specific brand.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        Why should I register my trademark?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Trademark registration protects your rights to use the
+                          mark and provides legal recourse against infringement.
+                          It remains valid for ten years, with the option to
+                          renew indefinitely.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        Who can apply for trademark registration in India?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Trademark registration is open to individuals,
+                          companies, proprietorship firms, partnerships, LLPs,
+                          Indian and foreign companies, trusts, and societies.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What are the types of trademark registrations in India?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          India offers various trademark registrations,
+                          including product marks, service marks, collective
+                          marks, certification marks, shape marks, pattern
+                          marks, and sound marks.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        How do I choose the correct trademark class?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Carefully select the appropriate class that
+                          categorizes your goods or services. Common classes
+                          include Class 9 (software, electronics), Class 25
+                          (clothing), Class 35 (business management), and Class
+                          41 (education). Our experts can help you select the
+                          correct trademark class.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        Why is a trademark search necessary?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          A trademark search helps ensure the uniqueness and
+                          exclusivity of your brand by identifying pre-existing
+                          trademarks in the market. IndiaFilings provides tools
+                          and support for this search.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What initial details are required for trademark
+                        registration?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Initial details include the applicants name, business
+                          type, business objectives, brand/logo/slogan name, and
+                          registration address.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What documents are needed for trademark registration?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Required documents vary by applicant type. Common
+                          documents include PAN card, Aadhar card, GST
+                          certificate, incorporation certificate, and
+                          partnership deed.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What is the process for trademark filing in India?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          <ul
+                            class="p-l-15 ul_f_f list-icon list-icon-check list-icon-colored text-justify"
+                          >
+                            <li>Trademark search</li>
+                            <li>Class Selection and Document Preparation</li>
+                            <li>Trademark Application Filing</li>
+                            <li>Vienna Codification Process</li>
+                            <li>Trademark Examination</li>
+                            <li>Trademark Journal Publication</li>
+                            <li>
+                              Trademark Objection/Opposition (if applicable)
+                            </li>
+                            <li>Trademark Hearing</li>
+                            <li>Trademark Registration</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What is the Vienna Codification process?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          The Vienna Classification categorizes figurative
+                          elements of trademarks. The Registrar applies this
+                          classification to the trademarks figurative elements.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What happens during trademark examination?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          A Trademark Registrar officer assesses the
+                          application, generating an examination report. The
+                          officer can accept, allow for journal publication or
+                          object to the application.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What is a trademark journal publication?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Accepted trademarks are published in the Trademark
+                          journal, allowing public objections. If no objections
+                          arise within 90 days, the trademark is registered in
+                          12 weeks.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What is a trademark opposition?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          A third party may file an objection to trademark
+                          registration if it harms their interests. Both parties
+                          can present arguments, and a Trademark Hearing Officer
+                          decides.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What happens if there are no objections or oppositions?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          If no objections are raised, the trademark document
+                          and registration certificate are prepared and issued,
+                          granting exclusive rights to the owner.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        How often should I renew my trademark?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Trademarks must be renewed every ten years to maintain
+                          their protection.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        How can IndiaFilings assist with trademark registration?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          IndiaFilings simplifies the trademark registration
+                          process, offering services like trademark search,
+                          class selection, document collection, application
+                          filing, objection handling, and more.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        Can I use the TM symbol after applying for trademark
+                        registration?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          Yes, once the trademark application is submitted, you
+                          can use the TM symbol to indicate that you have
+                          applied for trademark registration.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        Can I appeal a decision made during the trademark
+                        registration process?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          You can appeal decisions to the Intellectual Property
+                          Appellate Board if you disagree with the Registrar or
+                          Hearing Officers judgment.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        What are the post-registration services offered by
+                        IndiaFilings?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          IndiaFilings provides post-registration services such
+                          as trademark renewal, assignment, licensing, and other
+                          related services.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="comment p-l-10 m-b-15 d-none"
+                      itemscope=""
+                      itemprop="mainEntity"
+                      itemtype="https://schema.org/Question"
+                    >
+                      <h4 class="m-b-0" itemprop="name">
+                        How do I get started with IndiaFilings for trademark
+                        registration?
+                      </h4>
+                      <div
+                        itemscope=""
+                        itemprop="acceptedAnswer"
+                        itemtype="https://schema.org/Answer"
+                      >
+                        <div itemprop="text">
+                          You can contact our experts and initiate the process
+                          by providing basic information about your desired
+                          trademark and industry. IndiaFilings experts will
+                          guide you throughout the registration process.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline m-b-40"
+                  id="load_more_faq"
+                >
+                  load more
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar col-lg-3">
+            <div id="products">
+              <div class="product product_faq">
+                <div class="product-image1">
+                  <a href="#"
+                    ><img
+                      src="https://img.indiafilings.com/catalog/Trademark-opposition.png"
+                      alt="lorem"
+                      class="img-fluid"
+                      loading="lazy"
+                      width="270px"
+                      height="270px"
+                  /></a>
+                </div>
+                <div class="product-description">
+                  <div class="product-title1">
+                    <h5 class="m-b-0">
+                      <a href="#"><b>Lorem ipsum dolor sit amet.</b></a>
+                    </h5>
+                  </div>
+                  <div class="product-price1">
+                    <a href="#"><ins>From ₹ 100</ins></a>
+                  </div>
+                </div>
+              </div>
+              <div class="product product_faq">
+                <div class="product-image1">
+                  <a href="#"
+                    ><img
+                      src="https://img.indiafilings.com/catalog/Trademark-opposition.png"
+                      alt="lorem"
+                      class="img-fluid"
+                      loading="lazy"
+                      width="270px"
+                      height="270px"
+                  /></a>
+                </div>
+                <div class="product-description">
+                  <div class="product-title1">
+                    <h5 class="m-b-0">
+                      <a href="#"><b>Lorem ipsum dolor sit amet.</b></a>
+                    </h5>
+                  </div>
+                  <div class="product-price1">
+                    <a href="#"><ins>From ₹ 101</ins></a>
+                  </div>
+                </div>
+              </div>
+              <div class="product product_faq">
+                <div class="product-image1">
+                  <a href="#"
+                    ><img
+                      src="https://img.indiafilings.com/catalog/Trademark-Renewal.png"
+                      alt="lorem"
+                      class="img-fluid"
+                      loading="lazy"
+                      width="270px"
+                      height="270px"
+                  /></a>
+                </div>
+                <div class="product-description">
+                  <div class="product-title1">
+                    <h5 class="m-b-0">
+                      <a href="#"><b>Lorem ipsum dolor sit amet.</b></a>
+                    </h5>
+                  </div>
+                  <div class="product-price1">
+                    <a href="#"><ins>From ₹ 102</ins></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="additional">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h3>Related Business Registrations</h3>
+            <p>
+              In addition to registration or incorporation, a business may
+              require other registrations depending on the business activity
+              undertaken. Talk to an Advisor to find out registrations your
+              business may require post registration.
+            </p>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a href="#">
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/FSSAI-Registration-india.png"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 fssai_price_d">
+                  <a href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a href="#">
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/Importer_exporter_code.png"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 ie_code_d">
+                  <a href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a href="#">
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/Trade-License-india.png"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 t_l_d">
+                  <a href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a
+                  href="#"
+                >
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/Professional-Tax-Registration-india.png"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a
+                      href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 p_t_r_d">
+                  <a
+                    href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a href="#">
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/class-3_dsc.png"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 d_s_d">
+                  <a href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 grid-item">
+            <div class="product">
+              <div class="product-image2">
+                <a href="#">
+                  <img
+                    alt="lorem"
+                    src="https://img.indiafilings.com/catalog/GST-Registration_LEDGERS.jpg"
+                    class="img-fluid"
+                    loading="lazy"
+                    width="173px"
+                    height="173px"
+                  />
+                </a>
+              </div>
+              <div class="product-description">
+                <div class="product-title">
+                  <h4 class="m-b-0">
+                    <a href="#"
+                      ><b>lorem</b></a
+                    >
+                  </h4>
+                </div>
+                <div class="product-price2 g_r_d">
+                  <a href="#"
+                    ><ins>From ₹ 100</ins></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--location links-->
+    <section>
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <h3 class="headinseo text-center">GST Registration Services</h3>
+          <div class="col-sm-12 col-md-6 col-lg-6 location-link">
+            <ul class="list-icon list-icon-arrow list-icon-colored">
+              <li>
+                <a
+                  href="https://www.kcorptax.in/gst-registration-in-gurgaon.php"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Gurgaon</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/gst-registration-consultants-in-noida"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Noida</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/gst-registration-in-greater-noida.php"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Greater Noida</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/gst-registration-in-ghaziabad.php"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Ghaziabad</a
+                >
+              </li>
+              <span class="moretext_1" style="display: none">
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Uttar Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Rajasthan</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Punjab</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Madhya Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Odisha</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Chandigarh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Uttarakhand</a
+                  >
+                </li>
+              </span>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 location-link">
+            <ul class="list-icon list-icon-arrow list-icon-colored">
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/gst-registration-in-delhi"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Delhi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/gst-registration-consultants-in-rohini-delhi"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Rohini Delhi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/gst-registration-consultants-in-dwarka-delhi"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Dwarka Delhi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/gst-registration-consultant-in-laxmi-nagar-delhi.php"
+                  ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                  Laxmi Nagar Delhi</a
+                >
+              </li>
+              <span class="moretext_1" style="display: none">
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Uttar Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Rajasthan</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Punjab</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Madhya Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Odisha</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Chandigarh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>GST Registration In
+                    Uttarakhand</a
+                  >
+                </li>
+              </span>
+            </ul>
+          </div>
+          <div class="col-12 mt-3">
+            <button
+              class="btn btn-outline-primary moreless_button_1"
+            >
+              Load More Services
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container mt-5 mb-5">
+        <div class="row">
+          <h3 class="headinseo text-center">Company Registration Services</h3>
+          <div class="col-sm-12 col-md-6 col-lg-6 location-link">
+            <ul class="list-icon list-icon-arrow list-icon-colored">
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/company-registration-consultants-in-gurgaon"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  In Gurgaon</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/company-registration-consultant-in-noida.php"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  In Noida</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/company-registration-consultant-in-greater-noida.php"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  In Greater Noida</a
+                >
+              </li>
+              <span class="moretext_2" style="display: none">
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Uttar Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Rajasthan</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Punjab</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Madhya Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Odisha</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Chandigarh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Uttarakhand</a
+                  >
+                </li>
+              </span>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 location-link">
+            <ul class="list-icon list-icon-arrow list-icon-colored">
+              <li>
+                <a
+                  href="https://www.kcorptax.in/company-registration-consultant-in-preet-vihar-delhi.php"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  In Preet Vihar Delhi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/company-registration-consultants-in-connaught-place-delhi"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  in CP Delhi
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.kcorptax.in/services/company-registration-in-delhi"
+                  ><i class="fa-solid fa-angles-right"></i>Company Registration
+                  In Delhi</a
+                >
+              </li>
+              <span class="moretext_2" style="display: none">
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Uttar Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Rajasthan</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Punjab</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Madhya Pradesh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Odisha</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Chandigarh</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><i class="fa-solid fa-angles-right"></i>Company
+                    Registration In Uttarakhand</a
+                  >
+                </li>
+              </span>
+            </ul>
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-outline-primary moreless_button_2">
+              Load More Services
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // city state load more / load less :end
+      $(".moreless_button_1").click(function () {
+        $(".moretext_1").slideToggle();
+        if ($(".moreless_button_1").text() == "Load less Services") {
+          $(this).text("Load more Services");
+          console.log('less');
+        } else {
+          $(this).text("Load less Services");
+        }
+      });
+      $(".moreless_button_2").click(function () {
+        $(".moretext_2").slideToggle();
+        if ($(".moreless_button_2").text() == "Load less Services") {
+          $(this).text("Load more Services");
+        } else {
+          $(this).text("Load less Services");
+        }
+      });
+      // city state load more / load less
+    </script>
+  </body>
+</html>
